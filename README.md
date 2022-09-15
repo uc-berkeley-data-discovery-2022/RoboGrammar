@@ -11,13 +11,17 @@
 Commands were tested on Ubuntu 18.04.
 
 [CMake](https://cmake.org/download/) >= 3.8
+
 * Check with `cmake --version`
 
 GLEW
+
 * `sudo apt-get install libglew-dev`
 
 Python 3.6 or later + headers
-* Check the Python version with `python3 —-version`. If new enough, install Python headers: `sudo apt-get install python3-dev`
+
+* Check the Python version with `python3 —-version`. If new enough, install Python
+  headers: `sudo apt-get install python3-dev`
 * Otherwise, install the latest version of both: `sudo apt-get install python3.9 python3.9-dev`
 
 Note: Newer versions of Python may be available through the "deadsnakes" PPA:
@@ -42,6 +46,10 @@ sudo apt-get update
 `make -j8` (replace 8 with the number of CPU cores available)
 
 ## Installing Python Packages
+
+Check the version of the
+`RoboGrammar/build/examples/python_bindings/pyrobotdesign.cpython-[python_version]-x86_64-linux-gnu.so` and install the
+following using that version of python (Example: `pyrobotdesign.cpython-38-x86_64-linux-gnu.so` means python3.8). 
 
 Make sure you are in the `RoboGrammar` directory.
 
@@ -94,7 +102,9 @@ The search algorithms output .csv log files containing each design/rule sequence
 ## FAQs
 
 I get the error `The RandR headers were not found`
+
 * Install the X server development files: `sudo apt-get install xorg-dev`
 
 I get the error `RuntimeError: Could not open file "data/shaders/default.vert.glsl"` when trying to run examples
+
 * Set the `ROBOT_DESIGN_DATA_DIR` environment variable: `export ROBOT_DESIGN_DATA_DIR=$PWD/data/`

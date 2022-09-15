@@ -113,7 +113,9 @@ def simulate(robot, task, opt_seed, thread_count, episode_count=1):
     main_sim.save_state()
 
     input_sequence = np.zeros((dof_count, task.episode_len))
-    obs = np.zeros((value_estimator.get_observation_size(),
+    
+    obs_size = max(value_estimator.get_observation_size(), 1)
+    obs = np.zeros((obs_size,
                     task.episode_len + 1), order='f')
     rewards = np.zeros(task.episode_len * task.interval)
     for j in range(task.episode_len):
